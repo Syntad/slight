@@ -11,6 +11,10 @@
         "version": "0.0.0"
     },
     "tauri": {
+        "systemTray": {
+            "iconPath": "icons/icon.png",
+            "iconAsTemplate": true
+        },
         "allowlist": {
             "all": false,
             "shell": {
@@ -44,7 +48,7 @@
                 "icons/icon.icns",
                 "icons/icon.ico"
             ],
-            "identifier": "com.tauri.dev",
+            "identifier": "com.syntad.slight",
             "longDescription": "",
             "macOS": {
                 "entitlements": null,
@@ -71,9 +75,9 @@
         "windows": [
             {
                 "fullscreen": false,
-                "height": 200,
                 "title": "tauri-macos-spotlight-app",
                 "width": 500,
+                "height": 100,
                 "resizable": false,
                 "decorations": false,
                 "center": true,

@@ -1,8 +1,8 @@
 import type { Item, Result } from '../types/StackOverflowTypes';
-import { unescape } from 'html-escaper';
+import unescape from 'lodash/unescape';
 
 const URL =
-    'https://api.stackexchange.com/2.3/search?order=desc&sort=relevance&site=stackoverflow&intitle=';
+    'https://api.stackexchange.com/2.3/search/advanced?order=desc&site=stackoverflow&sort=relevance&q=';
 
 export async function search(searchTerm: string): Promise<Item[]> {
     if (searchTerm === '') return [];

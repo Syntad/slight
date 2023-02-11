@@ -8,7 +8,7 @@ specifiers:
   '@types/node': ^18.7.10
   autoprefixer: ^10.4.13
   classnames: ^2.3.2
-  html-escaper: ^3.0.3
+  lodash: ^4.17.21
   postcss: ^8.4.21
   postcss-load-config: ^4.0.1
   svelte: ^3.54.0
@@ -22,6 +22,7 @@ specifiers:
 dependencies:
   '@tauri-apps/api': 1.2.0
   classnames: 2.3.2
+  lodash: 4.17.21
 
 devDependencies:
   '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.55.1+vite@4.1.1
@@ -29,7 +30,6 @@ devDependencies:
   '@tsconfig/svelte': 3.0.0
   '@types/node': 18.13.0
   autoprefixer: 10.4.13_postcss@8.4.21
-  html-escaper: 3.0.3
   postcss: 8.4.21
   postcss-load-config: 4.0.1_postcss@8.4.21
   svelte: 3.55.1
@@ -715,10 +715,6 @@ packages:
       function-bind: 1.1.1
     dev: true
 
-  /html-escaper/3.0.3:
-    resolution: {integrity: sha512-RuMffC89BOWQoY0WKGpIhn5gX3iI54O6nRA0yC124NYVtzjmFWBIiFd8M0x+ZdX0P9R4lADg1mgP8C7PxGOWuQ==}
-    dev: true
-
   /import-fresh/3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -777,6 +773,10 @@ packages:
     resolution: {integrity: sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg==}
     engines: {node: '>=10'}
     dev: true
+
+  /lodash/4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+    dev: false
 
   /magic-string/0.25.9:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}

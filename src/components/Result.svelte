@@ -5,11 +5,13 @@
 
     const ANSWER_REF = 'https://stackoverflow.com/a/';
 
+    export let item: Item;
+
     function openLink() {
         open(ANSWER_REF + item.accepted_answer_id);
     }
 
-    export let item: Item;
+    const handleError = (ev) => (ev.target.src = '/imgs/avatar.png');
 </script>
 
 <div
@@ -19,8 +21,9 @@
 >
     <img
         class="w-10 h-10 rounded-full mr-4"
-        alt={item.owner.display_name}
         src={item.owner.profile_image}
+        alt={item.owner.display_name}
+        on:error={handleError}
     />
 
     <div class="w-full border-b border-gray-600">
