@@ -8,6 +8,7 @@
 
     let query = '';
     let isLoading = false;
+    let cancel = false;
 
     let container: HTMLElement = null;
     let element: HTMLElement = null;
@@ -21,7 +22,7 @@
         if (container == null) return;
 
         await appWindow.setSize(
-            new LogicalSize(500, container.clientHeight + 2)
+            new LogicalSize(600, container.clientHeight + 2)
         );
     });
 
@@ -29,7 +30,8 @@
     // easily get rate limited.
     const onUpdate = function onUpdate(newQuery: string) {
         if (isNullOrWhitespace(newQuery)) {
-            results.set([]);
+            cancel = true;
+            reset();
             return;
         }
 
@@ -37,9 +39,15 @@
         process(newQuery);
     };
 
+    function reset() {
+        results.set([]);
+        isLoading = false;
+    }
+
     const process = throttle(async (newQuery: string) => {
-        if (isNullOrWhitespace(newQuery)) {
-            results.set([]);
+        if (cancel) {
+            cancel = false;
+            reset();
             return;
         }
 

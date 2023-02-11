@@ -75,7 +75,7 @@
             {
                 "fullscreen": false,
                 "title": "tauri-macos-spotlight-app",
-                "width": 500,
+                "width": 600,
                 "height": 100,
                 "resizable": false,
                 "decorations": false,

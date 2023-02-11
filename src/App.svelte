@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Footer from './components/Footer.svelte';
     import SearchBar from './components/SearchBar.svelte';
     import SearchResults from './components/SearchResults.svelte';
 </script>
@@ -11,9 +12,5 @@
         <SearchResults />
     </div>
 
-    <div
-        class="bg-gray-700/40 border-t border-gray-700 px-4 w-full rounded-b-lg"
-    >
-        Slight
-    </div>
+    <Footer />
 </main>
