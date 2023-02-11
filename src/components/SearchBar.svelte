@@ -27,23 +27,27 @@
 
     //TODO: Let people customize their throttle, lower is faster / smoother but you can
     // easily get rate limited.
-    const onUpdate = throttle(async (newQuery: string) => {
+    const onUpdate = function onUpdate(newQuery: string) {
         if (isNullOrWhitespace(newQuery)) {
             results.set([]);
             return;
         }
 
         isLoading = true;
-        results.set(await search(newQuery));
-        isLoading = false;
-    }, 1500);
+        process(newQuery);
+    };
 
-    function onChange(newQuery: string) {
+    const process = throttle(async (newQuery: string) => {
         if (isNullOrWhitespace(newQuery)) {
             results.set([]);
             return;
         }
-    }
+
+        results.set(await search(newQuery));
+        isLoading = false;
+    }, 1500);
+
+    function onChange(newQuery: string) {}
 
     function isNullOrWhitespace(input: string) {
         return !input || !input.trim();

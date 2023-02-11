@@ -5,7 +5,7 @@
 
 use spotlight::init_spotlight_window;
 use tauri::{
-    CustomMenuItem, Manager, SystemTray, SystemTrayMenu, SystemTrayMenuItem,
+    CustomMenuItem, Manager, SystemTray, SystemTrayMenu, SystemTrayMenuItem, SystemTrayEvent, Position,
 };
 
 #[allow(unused_imports)]
@@ -39,6 +39,28 @@ fn main() {
 
         init_spotlight_window(window);
         Ok(())
+    })
+    .on_system_tray_event(|app, event| match event {
+        SystemTrayEvent::MenuItemClick { id, .. } => match id.as_str() {
+            "Hide" => {
+                let window = app.get_window("main").unwrap();
+                window.hide().unwrap();
+            }
+            "Show" => {
+                let window = app.get_window("main").unwrap();
+                window.show().unwrap();
+            }
+            "Preferences" => {
+                let window = app.get_window("main").unwrap();
+                window.emit("PreferencesClicked", Some("Yes")).unwrap();
+                window.show().unwrap();
+            }
+            "Quit" => {
+                std::process::exit(0);
+            }
+            _ => {}
+        },
+        _ => {}
     })
     .system_tray(create_system_tray())
     .run(tauri::generate_context!())

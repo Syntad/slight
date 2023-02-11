@@ -15,7 +15,7 @@ tauri-build = { version = "1.2", features = [] }
 [dependencies]
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
-tauri = { version = "1.2", features = ["global-shortcut-all", "macos-private-api", "shell-open", "system-tray", "window-center", "window-hide", "window-set-focus", "window-set-size", "window-set-skip-taskbar", "window-show"] }
+tauri = { version = "1.2", features = ["global-shortcut-all", "macos-private-api", "shell-open", "system-tray", "window-hide", "window-set-focus", "window-set-size", "window-set-skip-taskbar", "window-show"] }
 objc = "0.2.7"
 cocoa = "0.24.1"
 window-vibrancy = "0.3.2"

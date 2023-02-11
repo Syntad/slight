@@ -3,7 +3,7 @@
     import SearchResults from './components/SearchResults.svelte';
 </script>
 
-<main id="container" class="rounded-lg bg-black/40 border border-gray-600">
+<main id="container" class="rounded-lg bg-gray-900/80 border border-gray-600">
     <!-- svelte-ignore empty-block -->
 
     <div class="p-4">

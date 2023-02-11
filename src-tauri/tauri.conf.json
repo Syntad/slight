@@ -26,7 +26,6 @@
                 "hide": true,
                 "setFocus": true,
                 "setSize": true,
-                "center": true,
                 "setSkipTaskbar": true
             },
             "globalShortcut": {
@@ -80,7 +79,6 @@
                 "height": 100,
                 "resizable": false,
                 "decorations": false,
-                "center": true,
                 "alwaysOnTop": true,
                 "visible": false,
                 "transparent": true

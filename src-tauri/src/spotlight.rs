@@ -16,6 +16,8 @@ pub fn init_spotlight_window(window: Window<Wry>) {
     set_spotlight_window_collection_behaviour(&window);
     set_window_above_menubar(&window);
     window.set_focus().unwrap();
+    position_window_at_the_center_of_the_monitor_with_cursor(&window);
+
     // window.hide().unwrap();
 }
 
@@ -23,7 +25,6 @@ fn register_shortcut(window: &Window<Wry>) {
     let window = window.to_owned();
     let mut shortcut_manager = window.app_handle().global_shortcut_manager();
     shortcut_manager.register("Cmd+k", move || {
-        position_window_at_the_center_of_the_monitor_with_cursor(&window);
 
         if window.is_visible().unwrap() {
             window.hide().unwrap();
@@ -53,7 +54,7 @@ fn position_window_at_the_center_of_the_monitor_with_cursor(window: &Window<Wry>
         let rect = NSRect {
             origin: NSPoint {
                 x: (display_pos.x + (display_size.width / 2.0)) - (win_frame.size.width / 2.0),
-                y: (display_pos.y + (display_size.height / 2.0)) - (win_frame.size.height / 2.0),
+                y: (display_pos.y + (display_size.height / 2.0)) - (win_frame.size.height / 2.0) + 250.0,
             },
             size: win_frame.size,
         };
