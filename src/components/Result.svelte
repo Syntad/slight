@@ -60,14 +60,14 @@
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="w-10 h-10 text-green-400 cursor-pointer p-2 hover:bg-gray-600 rounded-full transition-all duration-150"
+                class="w-10 h-10 text-green-400 cursor-pointer p-1 hover:bg-gray-600 rounded-full transition-all duration-150"
                 on:click={openLink}
                 on:keypress={openLink}
             >
                 <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    d="M4.5 12.75l6 6 9-13.5"
+                    d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
             </svg>
         {/if}

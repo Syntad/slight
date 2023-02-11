@@ -15,17 +15,16 @@ pub fn init_spotlight_window(window: Window<Wry>) {
     register_spotlight_window_backdrop(&window);
     set_spotlight_window_collection_behaviour(&window);
     set_window_above_menubar(&window);
-    window.set_focus().unwrap();
+    // window.set_focus().unwrap();
     position_window_at_the_center_of_the_monitor_with_cursor(&window);
 
-    // window.hide().unwrap();
+    window.hide().unwrap();
 }
 
 fn register_shortcut(window: &Window<Wry>) {
     let window = window.to_owned();
     let mut shortcut_manager = window.app_handle().global_shortcut_manager();
     shortcut_manager.register("Cmd+k", move || {
-
         if window.is_visible().unwrap() {
             window.hide().unwrap();
         } else {

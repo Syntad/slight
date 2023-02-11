@@ -5,8 +5,6 @@
 </script>
 
 <main id="container" class="rounded-lg bg-gray-900/80 border border-gray-600">
-    <!-- svelte-ignore empty-block -->
-
     <div class="p-4">
         <SearchBar />
         <SearchResults />
