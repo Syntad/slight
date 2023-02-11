@@ -2,6 +2,7 @@
     import { unescapeHTML } from '../utils/StackOverflowUtil';
     import type { Item } from '../types/StackOverflowTypes';
     import { open } from '@tauri-apps/api/shell';
+    import Tag from './Tag.svelte';
 
     const ANSWER_REF = 'https://stackoverflow.com/a/';
     const TAG_REF = 'https://stackoverflow.com/questions/tagged/';
@@ -44,10 +45,10 @@
 
             <div class="flex gap-2 overflow-scroll">
                 {#each item.tags as tag}
-                    <span
-                        class="bg-gray-700 hover:bg-gray-500 cursor-pointer uppercase font-semibold rounded-sm px-2 text-xs whitespace-nowrap"
+                    <Tag
+                        class="hover:bg-gray-500 cursor-pointer"
                         on:click={() => open(TAG_REF + tag)}
-                        on:keydown={() => open(TAG_REF + tag)}>{tag}</span
+                        on:keydown={() => open(TAG_REF + tag)}>{tag}</Tag
                     >
                 {/each}
             </div>

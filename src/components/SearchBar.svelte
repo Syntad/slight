@@ -5,6 +5,7 @@
     import { afterUpdate, onMount } from 'svelte';
     import { appWindow, LogicalSize } from '@tauri-apps/api/window';
     import throttle from 'lodash/throttle';
+    import Tag from './Tag.svelte';
 
     let query = '';
     let isLoading = false;
@@ -64,20 +65,27 @@
     $: onChange(query);
 </script>
 
-<form action="" id="searchBarForm">
+<form
+    class={cn(
+        !isNullOrWhitespace(query) &&
+            query.length > 0 &&
+            'border-b border-b-gray-600 mb-4',
+        'flex justify-center items-center'
+    )}
+    action=""
+    id="searchBarForm"
+>
     <input
-        class={cn(
-            !isNullOrWhitespace(query) &&
-                query.length > 0 &&
-                'border-b border-b-gray-600 mb-4',
-            'w-full px-2 pt-1 pb-2 bg-transparent'
-        )}
+        class={'w-full px-2 pt-1 pb-2 bg-transparent'}
         bind:this={element}
         bind:value={query}
         on:input={(e) => onUpdate(e.currentTarget.value)}
         spellcheck="false"
         placeholder="What do you need?"
     />
+
+    <Tag class="bg-orange-300/20">STACK</Tag>
+    <!-- <Tag class="bg-green-300/20">GPT</Tag> -->
 </form>
 
 {#if isLoading}
