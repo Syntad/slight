@@ -7,6 +7,7 @@
     import Tag from './Tag.svelte';
 
     let query = '';
+    let prevQuery = '';
     let isLoading = false;
 
     let container: HTMLElement = null;
@@ -25,10 +26,16 @@
         );
     });
 
-    let typingTimer;
+    let typingTimer: ReturnType<typeof setTimeout>;
     let doneTypingInterval = 1000; // Time in MS
 
-    function onKeyup() {
+    function onKeyDown(e: KeyboardEvent) {
+        prevQuery = query;
+    }
+
+    function onKeyup(e: KeyboardEvent) {
+        if (prevQuery === query) return;
+
         clearTimeout(typingTimer);
 
         if (isNullOrWhitespace(query)) {
@@ -71,6 +78,7 @@
         bind:this={element}
         bind:value={query}
         on:keyup={onKeyup}
+        on:keydown={onKeyDown}
         spellcheck="false"
         placeholder="What do you need?"
     />
