@@ -4,12 +4,10 @@
     import { results } from '../stores/StackOverflowStore';
     import { afterUpdate, onMount } from 'svelte';
     import { appWindow, LogicalSize } from '@tauri-apps/api/window';
-    import throttle from 'lodash/throttle';
     import Tag from './Tag.svelte';
 
     let query = '';
     let isLoading = false;
-    let cancel = false;
 
     let container: HTMLElement = null;
     let element: HTMLElement = null;
@@ -27,42 +25,35 @@
         );
     });
 
-    //TODO: Let people customize their throttle, lower is faster / smoother but you can
-    // easily get rate limited.
-    const onUpdate = function onUpdate(newQuery: string) {
-        if (isNullOrWhitespace(newQuery)) {
-            cancel = true;
+    let typingTimer;
+    let doneTypingInterval = 1000; // Time in MS
+
+    function onKeyup() {
+        clearTimeout(typingTimer);
+
+        if (isNullOrWhitespace(query)) {
             reset();
             return;
         }
 
+        typingTimer = setTimeout(onDoneTyping, doneTypingInterval);
+
         isLoading = true;
-        process(newQuery);
-    };
+    }
+
+    async function onDoneTyping() {
+        results.set(await search(query));
+        isLoading = false;
+    }
 
     function reset() {
         results.set([]);
         isLoading = false;
     }
 
-    const process = throttle(async (newQuery: string) => {
-        if (cancel) {
-            cancel = false;
-            reset();
-            return;
-        }
-
-        results.set(await search(newQuery));
-        isLoading = false;
-    }, 1500);
-
-    function onChange(newQuery: string) {}
-
     function isNullOrWhitespace(input: string) {
         return !input || !input.trim();
     }
-
-    $: onChange(query);
 </script>
 
 <form
@@ -79,7 +70,7 @@
         class={'w-full px-2 pt-1 pb-2 bg-transparent'}
         bind:this={element}
         bind:value={query}
-        on:input={(e) => onUpdate(e.currentTarget.value)}
+        on:keyup={onKeyup}
         spellcheck="false"
         placeholder="What do you need?"
     />
