@@ -1,9 +1,9 @@
 {
     "build": {
-        "beforeDevCommand": "pnpm dev",
-        "beforeBuildCommand": "pnpm build",
+        "beforeDevCommand": "cd frontend && pnpm dev",
+        "beforeBuildCommand": "cd frontend && pnpm build",
         "devPath": "http://localhost:1420",
-        "distDir": "../dist",
+        "distDir": "../frontend/dist",
         "withGlobalTauri": false
     },
     "package": {
