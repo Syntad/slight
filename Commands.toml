@@ -7,6 +7,6 @@ tauri = { cmd = [
 ] }
 [setup]
 all = { cmd = [
-    { cmd = "npm i -g yarn --silent", working_dir = "crates/frontend" },
-    { cmd = "yarn", working_dir = "crates/frontend" },
+    { cmd = "npm i -g pnpm --silent", working_dir = "crates/frontend" },
+    { cmd = "pnpm i", working_dir = "crates/frontend" },
 ] }
