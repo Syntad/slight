@@ -12,9 +12,11 @@
 
     let container: HTMLElement = null;
     let element: HTMLElement = null;
+    let resultsContainer: HTMLElement = null;
 
     onMount(() => {
         container = document.getElementById('container');
+        resultsContainer = document.getElementById('r-container');
         element.focus();
     });
 
@@ -24,6 +26,8 @@
         await appWindow.setSize(
             new LogicalSize(600, container.clientHeight + 2)
         );
+
+        resultsContainer.scrollTop = 0;
     });
 
     let typingTimer: ReturnType<typeof setTimeout>;
