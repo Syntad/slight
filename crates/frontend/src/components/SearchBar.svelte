@@ -63,15 +63,13 @@
     }
 </script>
 
-<form
+<div
     class={cn(
         !isNullOrWhitespace(query) &&
             query.length > 0 &&
             'border-b border-b-gray-600 mb-4',
         'flex justify-center items-center'
     )}
-    action=""
-    id="searchBarForm"
 >
     <input
         class={'w-full px-2 pt-1 pb-2 bg-transparent'}
@@ -85,7 +83,7 @@
 
     <Tag class="bg-orange-300/20">STACK</Tag>
     <!-- <Tag class="bg-green-300/20">GPT</Tag> -->
-</form>
+</div>
 
 {#if isLoading}
     <div class="text-center">
