@@ -39,7 +39,8 @@
         clearTimeout(typingTimer);
 
         if (isNullOrWhitespace(query)) {
-            reset();
+            results.set([]);
+            isLoading = false;
             return;
         }
 
@@ -50,11 +51,6 @@
 
     async function onDoneTyping() {
         results.set(await search(query));
-        isLoading = false;
-    }
-
-    function reset() {
-        results.set([]);
         isLoading = false;
     }
 
