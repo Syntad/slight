@@ -19,6 +19,7 @@ tauri = { version = "1.2", features = ["global-shortcut-all", "macos-private-api
 objc = "0.2.7"
 cocoa = "0.24.1"
 window-vibrancy = "0.3.2"
+just = "1.13.0"
 
 [features]
 # by default Tauri runs in production mode
