@@ -18,6 +18,8 @@ To download Slight, visit the [releases section](https://github.com/Syntad/sligh
     -   Contributions
 -   [ ] Theming
 
+If you have any suggestions, feel free to conact us.
+
 ## 🤝 Contributing
 
 To get Slight set up on your machine, you'll need to have Rust and pnpm (or a package manager of your choice) installed. Then, follow these steps:
