@@ -9,7 +9,6 @@
     const USER_REF = 'https://stackoverflow.com/users/';
 
     export let item: Item;
-    let error = false;
 
     function openLink() {
         open(ANSWER_REF + item.accepted_answer_id);
@@ -19,38 +18,36 @@
         open(USER_REF + item.owner.user_id);
     }
 
-    function handleError() {
-        error = true;
-    }
+    const handleError = (ev) =>
+        (ev.target.src =
+            'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
 </script>
 
 <div class="flex rounded-lg p-4 hover:bg-gray-800">
-    {#if error || item.owner.profile_image === undefined}
-        <div
-            class="relative shrink-0 w-10 h-10 mr-4 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600"
+    <div
+        class="relative shrink-0 w-10 h-10 overflow-hidden rounded-full border-2 border-transparent hover:border-gray-300 mr-4"
+    >
+        <svg
+            class="absolute w-10 h-10 text-gray-400 -left-0.5 bg-gray-600 rounded-full"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+                fill-rule="evenodd"
+                d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                clip-rule="evenodd"
+            /></svg
         >
-            <svg
-                class="absolute w-12 h-12 text-gray-400 -left-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-                ><path
-                    fill-rule="evenodd"
-                    d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                    clip-rule="evenodd"
-                /></svg
-            >
-        </div>
-    {:else}
+
         <img
-            class="w-10 h-10 rounded-full mr-4 border-2 border-transparent hover:border-gray-600 cursor-pointer"
+            class="absolute w-10 h-10 rounded-full cursor-pointer"
             src={item.owner.profile_image}
             alt={item.owner.display_name}
             on:error={handleError}
             on:click={openUser}
             on:keypress={openUser}
         />
-    {/if}
+    </div>
 
     <div
         class="flex items-center justify-between pb-2 w-full border-b border-gray-600"
