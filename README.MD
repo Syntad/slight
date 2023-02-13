@@ -28,3 +28,7 @@ To get Slight set up on your machine, you'll need to have Rust and pnpm (or a pa
 4. Run the development server: `cargo tauri dev`
 
 If you encounter any issues, try running `cargo tauri build` after installing dependencies.
+
+## 📝 License
+
+Slight is licensed under the MIT LICENSE. See the [LICENSE file](./LICENCE) for more information.
