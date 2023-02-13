@@ -26,10 +26,10 @@ To get Slight set up on your machine, you'll need to have Rust and pnpm (or a pa
 
 1. Clone the project using `git clone https://github.com/Syntad/slight.git`
 2. Change into the project directory: `cd slight`
-3. Setup project and install dependencies: `cargo setup`
-4. Run the development server: `cargo tauri dev`
+3. Setup project and install dependencies: `cargo run setup`
+4. Run the development server: `cargo run dev`
 
-If you encounter any issues, try running `cargo tauri build` after installing dependencies.
+If you encounter any issues, try running `cargo run build` after installing dependencies.
 
 ## 📝 License
 
