@@ -12,9 +12,11 @@ To download Slight, visit the [releases section](https://github.com/Syntad/sligh
 
 ## 🛠 Upcoming Features
 
--   ChatGPT support
--   Themes
--   Git tools
+-   [ ] ChatGPT support
+-   [ ] Git tooling
+    -   Notifications
+    -   Contributions
+-   [ ] Theming
 
 ## 🤝 Contributing
 
