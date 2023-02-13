@@ -2,6 +2,8 @@
 
 Slight is a lightweight and blazingly fast launcher for developers to quickly search Stack-Overflow questions, and receive additional help from ChatGPT. ⚡
 
+🚧 Slight is in early development stages, bugs are expected. If you are interested in getting involved and making a positive impact on this exciting project, we welcome your participation.
+
 ---
 
 ## 📥 Downloading
