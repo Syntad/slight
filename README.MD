@@ -31,4 +31,4 @@ If you encounter any issues, try running `cargo tauri build` after installing de
 
 ## 📝 License
 
-Slight is licensed under the MIT LICENSE. See the [LICENSE file](./LICENCE) for more information.
+Slight is licensed under the MIT LICENSE. See the [LICENSE file](./LICENCE.txt) for more information.
