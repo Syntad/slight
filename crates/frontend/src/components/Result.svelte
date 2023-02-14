@@ -23,7 +23,7 @@
             'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
 </script>
 
-<div class="flex rounded-lg p-4 hover:bg-gray-800">
+<div class="flex rounded-lg p-4 hover:bg-gray-700">
     <div
         class="relative mr-4 h-10 w-10 shrink-0 overflow-hidden rounded-full border-2 border-transparent hover:border-gray-300">
         <svg
