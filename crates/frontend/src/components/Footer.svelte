@@ -18,6 +18,4 @@
         class="min-w-sm cursor-pointer border border-orange-400/20 bg-orange-300/20 text-orange-400"
         >STACK</Tag>
     <!-- <Tag class="bg-green-300/20">GPT</Tag> -->
-
-    <div class="m-4 bg-white px-3 text-white"></div>
 </div>
