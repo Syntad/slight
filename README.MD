@@ -26,6 +26,12 @@ If you have any suggestions, feel free to conact us.
 
 To get Slight set up on your machine, you'll need to have Rust, smake, and pnpm (or a package manager of your choice) installed. Then, follow these steps:
 
+Installs:
+
+-   Rust: `https://www.rust-lang.org/tools/install`
+-   Smake: `https://github.com/Syntad/smake`
+-   PNPM: `https://pnpm.io/installation`
+
 1. Clone the project using `git clone https://github.com/Syntad/slight.git`
 2. Change into the project directory: `cd slight`
 3. Setup project and install dependencies: `smake -i`
