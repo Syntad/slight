@@ -6,9 +6,8 @@
 
 <div
     id="r-container"
-    class="flex flex-col gap-2 max-h-64 overflow-x-hidden overflow-scroll"
->
+    class="flex max-h-64 flex-col gap-2 overflow-scroll overflow-x-hidden">
     {#each $results as result}
-        <Result bind:item={result} />
+        <Result bind:item="{result}" />
     {/each}
 </div>

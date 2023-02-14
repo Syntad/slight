@@ -8,10 +8,9 @@
 <span
     on:click
     on:keydown
-    class={cn(
+    class="{cn(
         clazz,
-        'bg-gray-700 uppercase font-semibold rounded-sm px-2 text-xs whitespace-nowrap'
-    )}
->
+        'whitespace-nowrap rounded-sm bg-gray-700 px-2 text-xs font-semibold uppercase'
+    )}">
     <slot />
 </span>

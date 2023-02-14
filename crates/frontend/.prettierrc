@@ -1,0 +1,14 @@
+{
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "arrowParens": "always",
+    "bracketSpacing": true,
+    "endOfLine": "lf",
+    "printWidth": 80,
+    "singleQuote": true,
+    "semi": true,
+    "svelteSortOrder": "scripts-markup-styles",
+    "svelteStrictMode": true,
+    "svelteBracketNewLine": false,
+    "svelteAllowShorthand": false
+}
