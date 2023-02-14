@@ -245,3 +245,5 @@ Cargo.lock
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos,node,react,rust,yarn
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
+crates/frontend/src/types/gptTypes.ts
+crates/frontend/src/utils/gptUtils.ts
