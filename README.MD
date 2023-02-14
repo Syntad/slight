@@ -32,6 +32,8 @@ Installs:
 -   Smake: `https://github.com/Syntad/smake`
 -   PNPM: `https://pnpm.io/installation`
 
+---
+
 1. Clone the project using `git clone https://github.com/Syntad/slight.git`
 2. Change into the project directory: `cd slight`
 3. Setup project and install dependencies: `smake -i`
