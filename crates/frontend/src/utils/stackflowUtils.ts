@@ -1,4 +1,4 @@
-import type { Item, Result } from '../types/stackflowTypes';
+import type { Item, Result } from '@/types/stackflowTypes';
 import unescape from 'lodash/unescape';
 
 const URL =

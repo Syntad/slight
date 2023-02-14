@@ -1,10 +1,9 @@
 <script lang="ts">
     import cn from 'classnames';
-    import { search } from '../utils/StackOverflowUtil';
-    import { results } from '../stores/StackOverflowStore';
+    import { search } from '@/utils/stackflowUtils';
+    import { results } from '@/stores/stackflowStore';
     import { afterUpdate, onMount } from 'svelte';
     import { appWindow, LogicalSize } from '@tauri-apps/api/window';
-    import Tag from './Tag.svelte';
 
     let query = '';
     let prevQuery = '';

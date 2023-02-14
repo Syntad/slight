@@ -1,7 +1,7 @@
 <script lang="ts">
-    import Result from '../components/Result.svelte';
+    import Result from '@/components/Result.svelte';
 
-    import { results } from '../stores/StackOverflowStore';
+    import { results } from '@/stores/stackflowStore';
 </script>
 
 <div

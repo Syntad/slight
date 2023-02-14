@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { unescapeHTML } from '../utils/StackOverflowUtil';
-    import type { Item } from '../types/StackOverflowTypes';
+    import { unescapeHTML } from '@/utils/stackflowUtils';
+    import type { Item } from '@/types/stackflowTypes';
     import { open } from '@tauri-apps/api/shell';
     import Tag from './Tag.svelte';
 
