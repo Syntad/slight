@@ -42,7 +42,7 @@
         <img
             class="absolute w-10 h-10 rounded-full cursor-pointer"
             src={item.owner.profile_image}
-            alt={item.owner.display_name}
+            alt=""
             on:error={handleError}
             on:click={openUser}
             on:keypress={openUser}

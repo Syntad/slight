@@ -80,9 +80,6 @@
         spellcheck="false"
         placeholder="What do you need?"
     />
-
-    <Tag class="bg-orange-300/20">STACK</Tag>
-    <!-- <Tag class="bg-green-300/20">GPT</Tag> -->
 </div>
 
 {#if isLoading}
